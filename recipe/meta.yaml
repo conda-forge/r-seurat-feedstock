@@ -51,12 +51,12 @@ requirements:
     - r-mass
     - r-matrix >=1.2_14
     - r-metap
+    - r-patchwork
     - r-pbapply
     - r-plotly
     - r-png
     - r-rann
     - r-rcolorbrewer
-    - r-rocr
     - r-rcpp
     - r-rcppannoy
     - r-rcppeigen
@@ -68,7 +68,6 @@ requirements:
     - r-rtsne
     - r-scales
     - r-sctransform >=0.2.0
-    - r-sdmtools
     - r-tsne
     - r-uwot >=0.1.5
   run:
@@ -92,12 +91,12 @@ requirements:
     - r-mass
     - r-matrix >=1.2_14
     - r-metap
+    - r-patchwork
     - r-pbapply
     - r-plotly
     - r-png
     - r-rann
     - r-rcolorbrewer
-    - r-rocr
     - r-rcpp
     - r-rcppannoy
     - r-rcppeigen
@@ -109,7 +108,6 @@ requirements:
     - r-rtsne
     - r-scales
     - r-sctransform >=0.2.0
-    - r-sdmtools
     - r-tsne
     - r-uwot >=0.1.5
     - {{native}}gcc-libs         # [win]
