@@ -1,4 +1,4 @@
-{% set version = "3.1.3" %}
+{% set version = "3.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: 54398b7ec454c6666868c7b4df091eb560c0ed9ead03193c1fb185899fabc224
+  sha256: 716b9a38e7bea7cec180081c22dcf06a7a14919981f4f9462cddc2b0a15c1252
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -51,12 +51,12 @@ requirements:
     - r-mass
     - r-matrix >=1.2_14
     - r-metap
+    - r-patchwork
     - r-pbapply
     - r-plotly
     - r-png
     - r-rann
     - r-rcolorbrewer
-    - r-rocr
     - r-rcpp
     - r-rcppannoy
     - r-rcppeigen
@@ -68,7 +68,6 @@ requirements:
     - r-rtsne
     - r-scales
     - r-sctransform >=0.2.0
-    - r-sdmtools
     - r-tsne
     - r-uwot >=0.1.5
   run:
@@ -92,12 +91,12 @@ requirements:
     - r-mass
     - r-matrix >=1.2_14
     - r-metap
+    - r-patchwork
     - r-pbapply
     - r-plotly
     - r-png
     - r-rann
     - r-rcolorbrewer
-    - r-rocr
     - r-rcpp
     - r-rcppannoy
     - r-rcppeigen
@@ -109,7 +108,6 @@ requirements:
     - r-rtsne
     - r-scales
     - r-sctransform >=0.2.0
-    - r-sdmtools
     - r-tsne
     - r-uwot >=0.1.5
     - {{native}}gcc-libs         # [win]
@@ -122,14 +120,12 @@ test:
 about:
   home: http://www.satijalab.org/seurat, https://github.com/satijalab/seurat
   license: GPL-3
-  summary: A toolkit for quality control, analysis, and exploration of single cell RNA sequencing
-    data. 'Seurat' aims to enable users to identify and interpret sources of heterogeneity
-    from single cell transcriptomic measurements, and to integrate diverse types of
-    single cell data. See Satija R, Farrell J, Gennert D, et al (2015) <doi:10.1038/nbt.3192>,
-    Macosko E, Basu A, Satija R, et al (2015) <doi:10.1016/j.cell.2015.05.002>, and
-    Butler A and Satija R (2017) <doi:10.1101/164889> for more details.
+  summary: A toolkit for quality control, analysis, and exploration of single cell RNA sequencing data. 'Seurat' aims to enable users to identify and interpret sources
+    of heterogeneity from single cell transcriptomic measurements, and to integrate diverse types of single cell data. See Satija R, Farrell J, Gennert D, et al (2015)
+    <doi:10.1038/nbt.3192>, Macosko E, Basu A, Satija R, et al (2015) <doi:10.1016/j.cell.2015.05.002>, and Butler A and Satija R (2017) <doi:10.1101/164889> for
+    more details.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
