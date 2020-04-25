@@ -6,3 +6,5 @@ appveyor:
     BINSTAR_TOKEN: tumuXLL8PU75WMnRDemRy02ruEq2RpNxeK3dz0MjFssnosPm2v4EFjfNB4PTotA1
 provider:
   win: azure
+bot:
+  automerge: true
