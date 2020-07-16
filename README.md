@@ -3,7 +3,7 @@ About r-seurat
 
 Home: http://www.satijalab.org/seurat, https://github.com/satijalab/seurat
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD-3-Clause
 
