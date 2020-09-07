@@ -43,13 +43,12 @@ requirements:
     - r-rcppeigen
     - r-rcppprogress
     - r-rtsne
-    - r-ape
     - r-cluster
     - r-cowplot
     - r-fitdistrplus
     - r-future
     - r-future.apply
-    - r-ggplot2 >=3.0.0
+    - r-ggplot2 >=3.3.0
     - r-ggrepel
     - r-ggridges
     - r-httr
@@ -59,6 +58,7 @@ requirements:
     - r-jsonlite
     - r-leiden >=0.3.1
     - r-lmtest
+    - r-matrixstats
     - r-miniui
     - r-patchwork
     - r-pbapply
@@ -87,13 +87,12 @@ requirements:
     - r-rcppeigen
     - r-rcppprogress
     - r-rtsne
-    - r-ape
     - r-cluster
     - r-cowplot
     - r-fitdistrplus
     - r-future
     - r-future.apply
-    - r-ggplot2 >=3.0.0
+    - r-ggplot2 >=3.3.0
     - r-ggrepel
     - r-ggridges
     - r-httr
@@ -103,6 +102,7 @@ requirements:
     - r-jsonlite
     - r-leiden >=0.3.1
     - r-lmtest
+    - r-matrixstats
     - r-miniui
     - r-patchwork
     - r-pbapply
