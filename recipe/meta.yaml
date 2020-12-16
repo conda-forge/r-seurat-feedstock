@@ -127,7 +127,7 @@ test:
 
 about:
   home: https://satijalab.org/seurat, https://github.com/satijalab/seurat
-  license: GPL-3
+  license: GPL-3.0-only
   summary: A toolkit for quality control, analysis, and exploration of single cell RNA sequencing
     data. 'Seurat' aims to enable users to identify and interpret sources of heterogeneity
     from single cell transcriptomic measurements, and to integrate diverse types of
