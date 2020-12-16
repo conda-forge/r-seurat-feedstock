@@ -1,7 +1,9 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '7'
+- '11'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -9,11 +11,11 @@ channel_targets:
 cran_mirror:
 - https://cran.r-project.org
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
-- '7'
-docker_image:
-- condaforge/linux-anvil-comp7
+- '11'
+macos_machine:
+- x86_64-apple-darwin13.4.0
 pin_run_as_build:
   r-base:
     min_pin: x.x
@@ -21,4 +23,7 @@ pin_run_as_build:
 r_base:
 - '4.0'
 target_platform:
-- linux-64
+- osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
