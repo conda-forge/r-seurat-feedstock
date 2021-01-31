@@ -39,10 +39,11 @@ requirements:
     - r-rcolorbrewer
     - r-rocr
     - r-rcpp
-    - r-rcppannoy
+    - r-rcppannoy >=0.0.18
     - r-rcppeigen
     - r-rcppprogress
     - r-rtsne
+    - r-seuratobject
     - r-cluster
     - r-cowplot
     - r-fitdistrplus
@@ -66,10 +67,9 @@ requirements:
     - r-png
     - r-reticulate
     - r-rlang
-    - r-rsvd
     - r-scales
     - r-scattermore >=0.7
-    - r-sctransform >=0.3.1
+    - r-sctransform >=0.3.2
     - r-shiny
     - r-spatstat
     - r-tibble
@@ -84,10 +84,11 @@ requirements:
     - r-rcolorbrewer
     - r-rocr
     - r-rcpp
-    - r-rcppannoy
+    - r-rcppannoy >=0.0.18
     - r-rcppeigen
     - r-rcppprogress
     - r-rtsne
+    - r-seuratobject
     - r-cluster
     - r-cowplot
     - r-fitdistrplus
@@ -111,10 +112,9 @@ requirements:
     - r-png
     - r-reticulate
     - r-rlang
-    - r-rsvd
     - r-scales
     - r-scattermore >=0.7
-    - r-sctransform >=0.3.1
+    - r-sctransform >=0.3.2
     - r-shiny
     - r-spatstat
     - r-tibble
