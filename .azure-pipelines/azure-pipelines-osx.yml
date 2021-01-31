@@ -8,9 +8,6 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_r_base3.6:
-        CONFIG: osx_64_r_base3.6
-        UPLOAD_PACKAGES: 'True'
       osx_64_r_base4.0:
         CONFIG: osx_64_r_base4.0
         UPLOAD_PACKAGES: 'True'
