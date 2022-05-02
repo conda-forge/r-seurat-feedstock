@@ -3,7 +3,7 @@ About r-seurat
 
 Home: https://satijalab.org/seurat, https://github.com/satijalab/seurat
 
-Package license: GPL-3.0-only
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-seurat-feedstock/blob/main/LICENSE.txt)
 
