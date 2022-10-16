@@ -21,10 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,18 +33,6 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-kernsmooth
-    - r-mass
-    - r-matrix >=1.2_14
-    - r-rann
-    - r-rcolorbrewer
-    - r-rocr
-    - r-rcpp >=1.0.7
-    - r-rcppannoy >=0.0.18
-    - r-rcppeigen
-    - r-rcppprogress
-    - r-rtsne
-    - r-seuratobject >=4.1.0
     - r-cluster
     - r-cowplot
     - r-fitdistrplus
@@ -58,39 +46,39 @@ requirements:
     - r-igraph
     - r-irlba
     - r-jsonlite
+    - r-kernsmooth
     - r-leiden >=0.3.1
     - r-lmtest
+    - r-mass
+    - r-matrix >=1.5_0
     - r-matrixstats
     - r-miniui
     - r-patchwork
     - r-pbapply
     - r-plotly >=4.9.0
     - r-png
+    - r-rann
+    - r-rcolorbrewer
+    - r-rcpp >=1.0.7
+    - r-rcppannoy >=0.0.18
+    - r-rcppeigen
+    - r-rcppprogress
     - r-reticulate
     - r-rlang
+    - r-rocr
+    - r-rtsne
     - r-scales
     - r-scattermore >=0.7
-    - r-sctransform >=0.3.3
+    - r-sctransform >=0.3.4
+    - r-seuratobject >=4.1.2
     - r-shiny
     - r-spatstat.core
     - r-spatstat.geom
     - r-tibble
-    - r-uwot >=0.1.9
+    - r-uwot >=0.1.14
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-kernsmooth
-    - r-mass
-    - r-matrix >=1.2_14
-    - r-rann
-    - r-rcolorbrewer
-    - r-rocr
-    - r-rcpp >=1.0.7
-    - r-rcppannoy >=0.0.18
-    - r-rcppeigen
-    - r-rcppprogress
-    - r-rtsne
-    - r-seuratobject >=4.1.0
     - r-cluster
     - r-cowplot
     - r-fitdistrplus
@@ -104,24 +92,36 @@ requirements:
     - r-igraph
     - r-irlba
     - r-jsonlite
+    - r-kernsmooth
     - r-leiden >=0.3.1
     - r-lmtest
+    - r-mass
+    - r-matrix >=1.5_0
     - r-matrixstats
     - r-miniui
     - r-patchwork
     - r-pbapply
     - r-plotly >=4.9.0
     - r-png
+    - r-rann
+    - r-rcolorbrewer
+    - r-rcpp >=1.0.7
+    - r-rcppannoy >=0.0.18
+    - r-rcppeigen
+    - r-rcppprogress
     - r-reticulate
     - r-rlang
+    - r-rocr
+    - r-rtsne
     - r-scales
     - r-scattermore >=0.7
-    - r-sctransform >=0.3.3
+    - r-sctransform >=0.3.4
+    - r-seuratobject >=4.1.2
     - r-shiny
     - r-spatstat.core
     - r-spatstat.geom
     - r-tibble
-    - r-uwot >=0.1.9
+    - r-uwot >=0.1.14
 
 test:
   commands:
