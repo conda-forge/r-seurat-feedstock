@@ -14,6 +14,12 @@ jobs:
       osx_64_r_base4.2:
         CONFIG: osx_64_r_base4.2
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_r_base4.1:
+        CONFIG: osx_arm64_r_base4.1
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_r_base4.2:
+        CONFIG: osx_arm64_r_base4.2
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:
