@@ -22,49 +22,56 @@ build:
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-miniui                   # [build_platform != target_platform]
-    - r-spatstat.geom            # [build_platform != target_platform]
-    - r-rcppannoy                # [build_platform != target_platform]
-    - r-igraph                   # [build_platform != target_platform]
-    - r-uwot                     # [build_platform != target_platform]
-    - r-rcpp                     # [build_platform != target_platform]
-    - r-reticulate               # [build_platform != target_platform]
-    - r-scales                   # [build_platform != target_platform]
-    - r-mass                     # [build_platform != target_platform]
-    - r-pbapply                  # [build_platform != target_platform]
-    - r-lmtest                   # [build_platform != target_platform]
-    - r-tibble                   # [build_platform != target_platform]
-    - r-rlang                    # [build_platform != target_platform]
-    - r-future                   # [build_platform != target_platform]
-    - r-ggrepel                  # [build_platform != target_platform]
-    - r-cowplot                  # [build_platform != target_platform]
-    - r-kernsmooth               # [build_platform != target_platform]
     - r-cluster                  # [build_platform != target_platform]
-    - r-rcolorbrewer             # [build_platform != target_platform]
-    - r-matrixstats              # [build_platform != target_platform]
-    - r-scattermore              # [build_platform != target_platform]
-    - r-matrix                   # [build_platform != target_platform]
-    - r-patchwork                # [build_platform != target_platform]
-    - r-png                      # [build_platform != target_platform]
-    - r-rcppprogress             # [build_platform != target_platform]
-    - r-irlba                    # [build_platform != target_platform]
-    - r-httr                     # [build_platform != target_platform]
-    - r-sctransform              # [build_platform != target_platform]
-    - r-plotly                   # [build_platform != target_platform]
-    - r-ica                      # [build_platform != target_platform]
-    - r-rcppeigen                # [build_platform != target_platform]
-    - r-rtsne                    # [build_platform != target_platform]
-    - r-seuratobject             # [build_platform != target_platform]
-    - r-spatstat.explore         # [build_platform != target_platform]
-    - r-future.apply             # [build_platform != target_platform]
-    - r-rocr                     # [build_platform != target_platform]
+    - r-cowplot                  # [build_platform != target_platform]
+    - r-fastdummies              # [build_platform != target_platform]
     - r-fitdistrplus             # [build_platform != target_platform]
-    - r-ggridges                 # [build_platform != target_platform]
-    - r-jsonlite                 # [build_platform != target_platform]
-    - r-rann                     # [build_platform != target_platform]
-    - r-leiden                   # [build_platform != target_platform]
-    - r-shiny                    # [build_platform != target_platform]
+    - r-future                   # [build_platform != target_platform]
+    - r-future.apply             # [build_platform != target_platform]
+    - r-generics                 # [build_platform != target_platform]
     - r-ggplot2                  # [build_platform != target_platform]
+    - r-ggrepel                  # [build_platform != target_platform]
+    - r-ggridges                 # [build_platform != target_platform]
+    - r-httr                     # [build_platform != target_platform]
+    - r-ica                      # [build_platform != target_platform]
+    - r-igraph                   # [build_platform != target_platform]
+    - r-irlba                    # [build_platform != target_platform]
+    - r-jsonlite                 # [build_platform != target_platform]
+    - r-kernsmooth               # [build_platform != target_platform]
+    - r-leiden                   # [build_platform != target_platform]
+    - r-lifecycle                # [build_platform != target_platform]
+    - r-lmtest                   # [build_platform != target_platform]
+    - r-mass                     # [build_platform != target_platform]
+    - r-matrix                   # [build_platform != target_platform]
+    - r-matrixstats              # [build_platform != target_platform]
+    - r-miniui                   # [build_platform != target_platform]
+    - r-patchwork                # [build_platform != target_platform]
+    - r-pbapply                  # [build_platform != target_platform]
+    - r-plotly                   # [build_platform != target_platform]
+    - r-png                      # [build_platform != target_platform]
+    - r-progressr                # [build_platform != target_platform]
+    - r-purrr                    # [build_platform != target_platform]
+    - r-rann                     # [build_platform != target_platform]
+    - r-rcolorbrewer             # [build_platform != target_platform]
+    - r-rcpp                     # [build_platform != target_platform]
+    - r-rcppannoy                # [build_platform != target_platform]
+    - r-rcppeigen                # [build_platform != target_platform]
+    - r-rcpphnsw                 # [build_platform != target_platform]
+    - r-rcppprogress             # [build_platform != target_platform]
+    - r-reticulate               # [build_platform != target_platform]
+    - r-rlang                    # [build_platform != target_platform]
+    - r-rocr                     # [build_platform != target_platform]
+    - r-rspectra                 # [build_platform != target_platform]
+    - r-rtsne                    # [build_platform != target_platform]
+    - r-scales                   # [build_platform != target_platform]
+    - r-scattermore              # [build_platform != target_platform]
+    - r-sctransform              # [build_platform != target_platform]
+    - r-seuratobject             # [build_platform != target_platform]
+    - r-shiny                    # [build_platform != target_platform]
+    - r-spatstat.explore         # [build_platform != target_platform]
+    - r-spatstat.geom            # [build_platform != target_platform]
+    - r-tibble                   # [build_platform != target_platform]
+    - r-uwot                     # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
     - {{ compiler('cxx') }}        # [not win]
@@ -74,14 +81,15 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-cluster
     - r-cowplot
+    - r-fastdummies
     - r-fitdistrplus
     - r-future
     - r-future.apply
+    - r-generics >=0.1.3
     - r-ggplot2 >=3.3.0
     - r-ggrepel
     - r-ggridges
@@ -92,6 +100,7 @@ requirements:
     - r-jsonlite
     - r-kernsmooth
     - r-leiden >=0.3.1
+    - r-lifecycle
     - r-lmtest
     - r-mass
     - r-matrix >=1.5_0
@@ -101,33 +110,39 @@ requirements:
     - r-pbapply
     - r-plotly >=4.9.0
     - r-png
+    - r-progressr
+    - r-purrr
     - r-rann
     - r-rcolorbrewer
     - r-rcpp >=1.0.7
     - r-rcppannoy >=0.0.18
     - r-rcppeigen
+    - r-rcpphnsw
     - r-rcppprogress
     - r-reticulate
     - r-rlang
     - r-rocr
+    - r-rspectra
     - r-rtsne
     - r-scales
-    - r-scattermore >=0.7
-    - r-sctransform >=0.3.5
-    - r-seuratobject >=4.1.3
+    - r-scattermore >=1.2
+    - r-sctransform >=0.4.1
+    - r-seuratobject >=5.0.0
     - r-shiny
     - r-spatstat.explore
     - r-spatstat.geom
     - r-tibble
-    - r-uwot >=0.1.14
+    - r-uwot >=0.1.10
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-cluster
     - r-cowplot
+    - r-fastdummies
     - r-fitdistrplus
     - r-future
     - r-future.apply
+    - r-generics >=0.1.3
     - r-ggplot2 >=3.3.0
     - r-ggrepel
     - r-ggridges
@@ -138,6 +153,7 @@ requirements:
     - r-jsonlite
     - r-kernsmooth
     - r-leiden >=0.3.1
+    - r-lifecycle
     - r-lmtest
     - r-mass
     - r-matrix >=1.5_0
@@ -147,25 +163,29 @@ requirements:
     - r-pbapply
     - r-plotly >=4.9.0
     - r-png
+    - r-progressr
+    - r-purrr
     - r-rann
     - r-rcolorbrewer
     - r-rcpp >=1.0.7
     - r-rcppannoy >=0.0.18
     - r-rcppeigen
+    - r-rcpphnsw
     - r-rcppprogress
     - r-reticulate
     - r-rlang
     - r-rocr
+    - r-rspectra
     - r-rtsne
     - r-scales
-    - r-scattermore >=0.7
-    - r-sctransform >=0.3.5
-    - r-seuratobject >=4.1.3
+    - r-scattermore >=1.2
+    - r-sctransform >=0.4.1
+    - r-seuratobject >=5.0.0
     - r-shiny
     - r-spatstat.explore
     - r-spatstat.geom
     - r-tibble
-    - r-uwot >=0.1.14
+    - r-uwot >=0.1.10
 
 test:
   commands:
