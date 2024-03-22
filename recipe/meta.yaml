@@ -1,4 +1,4 @@
-{% set version = "5.0.1" %}
+{% set version = "5.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: 0713b434be5bf14fcea068fbfc632ba15bebdec1007f1f48effd0dbb95c5150d
+  sha256: e4f3df92c6e3f0c49e7d953e47c74aeaa80d4f75cd27d17e24234434b5a12523
 
 build:
   merge_build_host: true  # [win]
   number: 0
+  skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
