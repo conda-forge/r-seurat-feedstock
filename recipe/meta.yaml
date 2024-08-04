@@ -1,6 +1,5 @@
 {% set version = "5.1.0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-seurat
@@ -13,9 +12,9 @@ source:
   sha256: adcfb43d7a8cc55eaa7a0954a082ac95e14059a82901913379bfec115e224d59
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
-  skip: true  # [win]
+  number: 1
+  # Checking windows to see if it passes. Uncomment the line if it fails.
+  # skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -138,7 +137,6 @@ requirements:
     - r-uwot >=0.1.10
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-cluster
     - r-cowplot
     - r-fastdummies
