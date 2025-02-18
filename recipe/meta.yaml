@@ -1,4 +1,4 @@
-{% set version = "5.1.0" %}
+{% set version = "5.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,15 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: adcfb43d7a8cc55eaa7a0954a082ac95e14059a82901913379bfec115e224d59
+  sha256: 0e99c0f9a6fee4a1e5e241aa2f8bb82288ff08185680f283124854a7b22fda19
 
 build:
-  number: 1
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -38,7 +40,7 @@ requirements:
     - r-irlba                    # [build_platform != target_platform]
     - r-jsonlite                 # [build_platform != target_platform]
     - r-kernsmooth               # [build_platform != target_platform]
-    - r-leiden                   # [build_platform != target_platform]
+    - r-leidenbase               # [build_platform != target_platform]
     - r-lifecycle                # [build_platform != target_platform]
     - r-lmtest                   # [build_platform != target_platform]
     - r-mass                     # [build_platform != target_platform]
@@ -101,7 +103,7 @@ requirements:
     - r-irlba
     - r-jsonlite
     - r-kernsmooth
-    - r-leiden >=0.3.1
+    - r-leidenbase
     - r-lifecycle
     - r-lmtest
     - r-mass
@@ -153,7 +155,7 @@ requirements:
     - r-irlba
     - r-jsonlite
     - r-kernsmooth
-    - r-leiden >=0.3.1
+    - r-leidenbase
     - r-lifecycle
     - r-lmtest
     - r-mass
