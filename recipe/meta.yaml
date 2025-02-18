@@ -13,11 +13,13 @@ source:
 
 build:
   number: 0
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -38,7 +40,7 @@ requirements:
     - r-irlba                    # [build_platform != target_platform]
     - r-jsonlite                 # [build_platform != target_platform]
     - r-kernsmooth               # [build_platform != target_platform]
-    - r-leiden                   # [build_platform != target_platform]
+    - r-leidenbase               # [build_platform != target_platform]
     - r-lifecycle                # [build_platform != target_platform]
     - r-lmtest                   # [build_platform != target_platform]
     - r-mass                     # [build_platform != target_platform]
@@ -101,7 +103,7 @@ requirements:
     - r-irlba
     - r-jsonlite
     - r-kernsmooth
-    - r-leiden >=0.3.1
+    - r-leidenbase
     - r-lifecycle
     - r-lmtest
     - r-mass
@@ -153,7 +155,7 @@ requirements:
     - r-irlba
     - r-jsonlite
     - r-kernsmooth
-    - r-leiden >=0.3.1
+    - r-leidenbase
     - r-lifecycle
     - r-lmtest
     - r-mass
