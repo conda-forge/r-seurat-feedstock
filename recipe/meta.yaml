@@ -209,4 +209,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - jdblischak
     - conda-forge/r
