@@ -64,7 +64,7 @@ requirements:
     - r-scales
     - r-scattermore >=1.2
     - r-sctransform >=0.4.0
-    - r-seuratobject >=4.1.4
+    - r-seuratobject >=5.0.2
     - r-shiny
     - r-spatstat.explore
     - r-spatstat.geom
@@ -111,7 +111,7 @@ requirements:
     - r-scales
     - r-scattermore >=1.2
     - r-sctransform >=0.4.0
-    - r-seuratobject >=4.1.4
+    - r-seuratobject >=5.0.2
     - r-shiny
     - r-spatstat.explore
     - r-spatstat.geom
