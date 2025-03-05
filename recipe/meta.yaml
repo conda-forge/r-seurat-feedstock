@@ -13,6 +13,7 @@ source:
   sha256: 0f17df9597642cfc1db4d8718f0b59ebab9fbed328b1f885f42ee85ea0dcb4dd
 
 build:
+  skip: true  # [not linux64]
   merge_build_host: true  # [win]
   number: 0
   rpaths:
