@@ -52,7 +52,6 @@ requirements:
     - r-plotly                   # [build_platform != target_platform]
     - r-png                      # [build_platform != target_platform]
     - r-progressr                # [build_platform != target_platform]
-    - r-purrr                    # [build_platform != target_platform]
     - r-rann                     # [build_platform != target_platform]
     - r-rcolorbrewer             # [build_platform != target_platform]
     - r-rcpp                     # [build_platform != target_platform]
@@ -115,7 +114,6 @@ requirements:
     - r-plotly >=4.9.0
     - r-png
     - r-progressr
-    - r-purrr
     - r-rann
     - r-rcolorbrewer
     - r-rcpp >=1.0.7
@@ -167,7 +165,6 @@ requirements:
     - r-plotly >=4.9.0
     - r-png
     - r-progressr
-    - r-purrr
     - r-rann
     - r-rcolorbrewer
     - r-rcpp >=1.0.7
@@ -191,9 +188,15 @@ requirements:
     - r-uwot >=0.1.10
 
 test:
+  requires:
+    - r-testthat
+  source_files:
+    - tests/
   commands:
-    - $R -e "library('Seurat')"           # [not win]
-    - "\"%R%\" -e \"library('Seurat')\""  # [win]
+    - $R -e "library('Seurat')"                                                       # [not win]
+    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
+    - "\"%R%\" -e \"library('Seurat')\""                                              # [win]
+    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
 about:
   home: https://satijalab.org/seurat
