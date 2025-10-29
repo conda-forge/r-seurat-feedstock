@@ -1,4 +1,4 @@
-{% set version = "5.3.0" %}
+{% set version = "5.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: 12abaf6cea4aa30f73028387e74ecb405b17acbae414d43522e764f3179908a7
+  sha256: 354acba93ccef2d89f0780d14e3122f4093cb0379e7229a834b2afa6b82db223
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -52,7 +52,6 @@ requirements:
     - r-plotly                   # [build_platform != target_platform]
     - r-png                      # [build_platform != target_platform]
     - r-progressr                # [build_platform != target_platform]
-    - r-purrr                    # [build_platform != target_platform]
     - r-rann                     # [build_platform != target_platform]
     - r-rcolorbrewer             # [build_platform != target_platform]
     - r-rcpp                     # [build_platform != target_platform]
@@ -115,7 +114,6 @@ requirements:
     - r-plotly >=4.9.0
     - r-png
     - r-progressr
-    - r-purrr
     - r-rann
     - r-rcolorbrewer
     - r-rcpp >=1.0.7
@@ -167,7 +165,6 @@ requirements:
     - r-plotly >=4.9.0
     - r-png
     - r-progressr
-    - r-purrr
     - r-rann
     - r-rcolorbrewer
     - r-rcpp >=1.0.7
@@ -191,9 +188,19 @@ requirements:
     - r-uwot >=0.1.10
 
 test:
+  requires:
+    - r-testthat
+    # optional test requirements
+    - r-ape
+    - r-hdf5r
+    - r-sf  # [not ppc64le]
+  source_files:
+    - tests/
   commands:
-    - $R -e "library('Seurat')"           # [not win]
-    - "\"%R%\" -e \"library('Seurat')\""  # [win]
+    - $R -e "library('Seurat')"                                                       # [not win]
+    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
+    - "\"%R%\" -e \"library('Seurat')\""                                              # [win]
+    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
 about:
   home: https://satijalab.org/seurat
