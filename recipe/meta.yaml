@@ -193,7 +193,7 @@ test:
     # optional test requirements
     - r-ape
     - r-hdf5r
-    - r-sf
+    - r-sf  # [not ppc64le]
   source_files:
     - tests/
   commands:
