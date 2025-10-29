@@ -190,6 +190,10 @@ requirements:
 test:
   requires:
     - r-testthat
+    # optional test requirements
+    - r-ape
+    - r-hdf5r
+    - r-sf
   source_files:
     - tests/
   commands:
