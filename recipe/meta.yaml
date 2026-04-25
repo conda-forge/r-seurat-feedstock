@@ -1,4 +1,4 @@
-{% set version = "5.4.0" %}
+{% set version = "5.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: d200da7cb19a2fa4ead7ea4aa1bb703dbc59c594f01cb91c996ad862ad6f6417
+  sha256: f1ccd40cfafad08a44b54278395c74b0c931891bb117868fd2eec2905287a6bd
 
 build:
   number: 0
@@ -207,8 +207,8 @@ about:
   dev_url: https://github.com/satijalab/seurat
   doc_url: https://satijalab.org/seurat/reference/index.html
   license: MIT
-  summary: A toolkit for quality control, analysis, and exploration of single cell RNA sequencing data. 'Seurat' aims to enable users to identify and interpret sources of heterogeneity from single cell transcriptomic measurements, and to integrate diverse types of single cell data. See Satija R, Farrell J, Gennert D, et
-    al (2015) <doi:10.1038/nbt.3192>, Macosko E, Basu A, Satija R, et al (2015) <doi:10.1016/j.cell.2015.05.002>, Stuart T, Butler A, et al (2019) <doi:10.1016/j.cell.2019.05.031>, and Hao, Hao, et al (2020) <doi:10.1101/2020.10.12.335331> for more details.
+  summary: A toolkit for quality control, analysis, and exploration of single cell RNA sequencing data. 'Seurat' aims to enable users to identify and interpret sources of heterogeneity from single cell transcriptomic measurements, and to integrate diverse types of single cell data. See Satija R, Farrell J, Gennert D, 
+    et al (2015) <doi:10.1038/nbt.3192>, Macosko E, Basu A, Satija R, et al (2015) <doi:10.1016/j.cell.2015.05.002>, Stuart T, Butler A, et al (2019) <doi:10.1016/j.cell.2019.05.031>, and Hao, Hao, et al (2020) <doi:10.1101/2020.10.12.335331> for more details.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
