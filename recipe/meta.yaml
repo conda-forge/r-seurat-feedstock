@@ -1,4 +1,4 @@
-{% set version = "5.5.1" %}
+{% set version = "6.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: 9614ef02d3e1010c40be5916a309103a76c4221a667cbc4b312e5126459a5821
+  sha256: a2273d1828059ae1ec19e84c25838facbec4b6e97c17a6ca4e6cb6b5d5a8387a
 
 build:
   number: 0
