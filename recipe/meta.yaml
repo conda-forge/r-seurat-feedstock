@@ -1,4 +1,4 @@
-{% set version = "5.5.1" %}
+{% set version = "6.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Seurat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Seurat/Seurat_{{ version }}.tar.gz
-  sha256: 9614ef02d3e1010c40be5916a309103a76c4221a667cbc4b312e5126459a5821
+  sha256: a2273d1828059ae1ec19e84c25838facbec4b6e97c17a6ca4e6cb6b5d5a8387a
 
 build:
   number: 0
@@ -47,9 +47,11 @@ requirements:
     - r-matrix                   # [build_platform != target_platform]
     - r-matrixstats              # [build_platform != target_platform]
     - r-miniui                   # [build_platform != target_platform]
+    - r-parallelly               # [build_platform != target_platform]
     - r-patchwork                # [build_platform != target_platform]
     - r-pbapply                  # [build_platform != target_platform]
     - r-plotly                   # [build_platform != target_platform]
+    - r-pls                      # [build_platform != target_platform]
     - r-png                      # [build_platform != target_platform]
     - r-progressr                # [build_platform != target_platform]
     - r-rann                     # [build_platform != target_platform]
@@ -59,6 +61,7 @@ requirements:
     - r-rcppeigen                # [build_platform != target_platform]
     - r-rcpphnsw                 # [build_platform != target_platform]
     - r-rcppprogress             # [build_platform != target_platform]
+    - r-rcppthread               # [build_platform != target_platform]
     - r-reticulate               # [build_platform != target_platform]
     - r-rlang                    # [build_platform != target_platform]
     - r-rocr                     # [build_platform != target_platform]
@@ -72,7 +75,7 @@ requirements:
     - r-spatstat.explore         # [build_platform != target_platform]
     - r-spatstat.geom            # [build_platform != target_platform]
     - r-tibble                   # [build_platform != target_platform]
-    - r-uwot                     # [build_platform != target_platform]
+    - r-uwot >=0.2.4             # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -85,6 +88,7 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
+    - libblas
     - r-base
     - r-cluster
     - r-cowplot
@@ -109,9 +113,11 @@ requirements:
     - r-matrix >=1.5_0
     - r-matrixstats
     - r-miniui
+    - r-parallelly
     - r-patchwork
     - r-pbapply
     - r-plotly >=4.9.0
+    - r-pls
     - r-png
     - r-progressr
     - r-rann
@@ -121,6 +127,7 @@ requirements:
     - r-rcppeigen
     - r-rcpphnsw
     - r-rcppprogress
+    - r-rcppthread
     - r-reticulate
     - r-rlang
     - r-rocr
@@ -134,7 +141,7 @@ requirements:
     - r-spatstat.explore
     - r-spatstat.geom
     - r-tibble
-    - r-uwot >=0.1.10
+    - r-uwot >=0.2.4
   run:
     - r-base
     - r-cluster
@@ -160,9 +167,11 @@ requirements:
     - r-matrix >=1.5_0
     - r-matrixstats
     - r-miniui
+    - r-parallelly
     - r-patchwork
     - r-pbapply
     - r-plotly >=4.9.0
+    - r-pls
     - r-png
     - r-progressr
     - r-rann
@@ -185,7 +194,7 @@ requirements:
     - r-spatstat.explore
     - r-spatstat.geom
     - r-tibble
-    - r-uwot >=0.1.10
+    - r-uwot >=0.2.4
 
 test:
   requires:
