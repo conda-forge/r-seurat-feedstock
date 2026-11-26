@@ -5,27 +5,31 @@
 jobs:
 - job: win
   pool:
-    vmImage: windows-2022
+    vmImage: $(vm_image)
   strategy:
     matrix:
       win_64_r_base4.4:
         CONFIG: win_64_r_base4.4
         UPLOAD_PACKAGES: 'True'
+        build_platform: win-64
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
+        vm_image: windows-2022
       win_64_r_base4.5:
         CONFIG: win_64_r_base4.5
         UPLOAD_PACKAGES: 'True'
+        build_platform: win-64
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
+        vm_image: windows-2022
   timeoutInMinutes: 360
   variables:
     UPLOAD_TEMP: D:\\tmp
@@ -42,6 +46,7 @@ jobs:
         PYTHONUNBUFFERED: 1
         UPLOAD_PACKAGES: $(UPLOAD_PACKAGES)
         UPLOAD_TEMP: $(UPLOAD_TEMP)
+        build_platform: $(build_platform)
         flow_run_id: azure_$(Build.BuildNumber).$(System.JobAttempt)
         remote_url: $(Build.Repository.Uri)
         sha: $(Build.SourceVersion)
